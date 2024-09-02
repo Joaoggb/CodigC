@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    double QTD[10];
+
+    for (int f = 0; f < 10; ++f) {
+        printf("Digite os valores: ");
+        scanf("%lf", &QTD[f]);
+
+        for (int n = 0; n < f; ++n) {  // Substituído `b` por `n`
+            if (QTD[f] < QTD[n]) {
+                double x = QTD[n];
+                QTD[n] = QTD[f];
+                QTD[f] = x;
+            }
+        }
+    }
+
+    for (int g = 0; g < 10; g++) {
+        printf("%f\n", QTD[g]);
+    }
+
+    return 0;
+}
